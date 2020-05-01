@@ -15,5 +15,7 @@ Currently implemented are:
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/merge_sort.rb)
 - Quick Sort
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/quick_sort.rb)
+- Radix Sort
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/radix_sort.rb)
 - Selection Sort
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/selection_sort.rb)
