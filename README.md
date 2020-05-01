@@ -6,14 +6,14 @@ different languages.
 Currently implemented are:
 
 - Bubble Sort
-  - Ruby
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/bubble_sort.rb)
 - Counting Sort
-  - Ruby
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/counting_sort.rb)
 - Insertion Sort
-  - Ruby
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/insertion_sort.rb)
 - Merge Sort
-  - Ruby
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/merge_sort.rb)
 - Quick Sort
-  - Ruby
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/quick_sort.rb)
 - Selection Sort
-  - Ruby
+  - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/selection_sort.rb)
