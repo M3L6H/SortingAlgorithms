@@ -18,9 +18,7 @@ def bubble_sort!(arr, &prc)
 end
 
 def bubble_sort(arr, &prc)
-    new_arr = []
-    arr.each { |ele| new_arr << ele }
-    bubble_sort!(new_arr, &prc)
+    bubble_sort!(arr.dup, &prc)
 end
 
 if $PROGRAM_NAME == __FILE__
