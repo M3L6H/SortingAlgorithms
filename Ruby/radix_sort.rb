@@ -1,5 +1,8 @@
 require_relative "./counting_sort.rb"
 
+# O(d*(n + b))
+# where d is the number of digits in the largest number
+# and b is the base we are using (in this case 10)
 def radix_sort(arr)
     max = arr.max
     sorted = arr
