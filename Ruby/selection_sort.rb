@@ -12,9 +12,7 @@ def selection_sort!(arr, &prc)
 end
 
 def selection_sort(arr, &prc)
-    new_arr = []
-    arr.each { |ele| new_arr << ele }
-    selection_sort!(new_arr, &prc)
+    selection_sort!(arr.dup, &prc)
 end
 
 if $PROGRAM_NAME == __FILE__
