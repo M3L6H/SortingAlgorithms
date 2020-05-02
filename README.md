@@ -12,6 +12,7 @@ Currently implemented are:
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/counting_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/counting_sort.rb)
 - Insertion Sort
+  - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/insertion_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/insertion_sort.rb)
 - Merge Sort
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/merge_sort.rb)
