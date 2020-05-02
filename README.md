@@ -22,4 +22,5 @@ Currently implemented are:
 - Radix Sort
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/radix_sort.rb)
 - Selection Sort
+  - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/selection_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/selection_sort.rb)
