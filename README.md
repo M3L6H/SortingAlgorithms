@@ -21,6 +21,7 @@ Currently implemented are:
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/quick_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/quick_sort.rb)
 - Radix Sort
+  - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/radix_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/radix_sort.rb)
 - Selection Sort
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/selection_sort.cpp)
