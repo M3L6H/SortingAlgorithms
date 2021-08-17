@@ -15,6 +15,7 @@ Currently implemented are:
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/insertion_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/insertion_sort.rb)
 - Merge Sort
+  - [Bash](https://github.com/M3L6H/SortingAlgorithms/blob/master/Bash/merge_sort.sh)
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/merge_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/merge_sort.rb)
 - Quick Sort
