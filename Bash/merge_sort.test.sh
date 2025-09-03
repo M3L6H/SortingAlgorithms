@@ -35,4 +35,4 @@ eval_test 'empty case' "$(merge_sort 0)" ''
 
 echo "Passed: ${passed}"
 echo "Failed: ${failed}"
-exit "$([ $failed -eq 0 ])"
+exit $([ $failed -eq 0 ])
