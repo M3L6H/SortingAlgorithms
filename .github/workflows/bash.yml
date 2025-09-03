@@ -1,0 +1,50 @@
+name: test-bash
+
+on:
+  push:
+    paths:
+      - 'Bash/**'
+  pull_request:
+    paths:
+      - 'Bash/**'
+  workflow_dispatch:
+
+jobs:
+  matrix:
+    name: prepare-test-matrix
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: generate-matrix
+        id: set-matrix
+        run: |-
+          make_matrix() {
+            echo '{'
+            echo '"test": ['
+            f='false'
+            for file in Bash/**/*.test.sh; do
+              if "$f"; then
+                echo -n ','
+              else
+                f='true'
+              fi
+              echo "\"${file}\""
+            done
+            echo ']'
+            echo '}'
+          }
+          matrix="$(make_matrix)"
+          echo "$matrix" | jq .
+          echo "matrix=$(echo "$matrix" | jq -c .)" >> "${GITHUB_OUTPUT}"
+  build:
+    needs: matrix
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix.outputs.matrix) }}
+    name: run-${{ matrix.test }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: run-test
+        run: |-
+          . ${{ matrix.test }}
