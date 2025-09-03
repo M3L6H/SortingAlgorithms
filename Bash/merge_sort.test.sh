@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Enable alias expansion
+shopt -s expand_aliases
+
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 merge_sort="${script_dir}/merge_sort.sh"
 
@@ -32,4 +35,4 @@ eval_test 'empty case' "$(merge_sort 0)" ''
 
 echo "Passed: ${passed}"
 echo "Failed: ${failed}"
-exit "$([ failed -eq 0 ])"
+exit "$([ $failed -eq 0 ])"
