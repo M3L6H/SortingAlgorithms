@@ -16,9 +16,14 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
+      - name: checkout
+        uses: actions/checkout@v5.0.0
+        with:
+          fetch-depth: 0
       - name: generate-matrix
         id: set-matrix
         run: |-
+          shopt -s nullglob # Ignore empty glob
           make_matrix() {
             echo '{'
             echo '"test": ['
@@ -45,6 +50,11 @@ jobs:
     name: run-${{ matrix.test }}
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v5.0.0
+        with:
+          fetch-depth: 0
       - name: run-test
         run: |-
-          . ${{ matrix.test }}
+          chmod +x '${{ matrix.test }}'
+          . '${{ matrix.test }}'
