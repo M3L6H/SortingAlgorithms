@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-merge_sort="$(dirname "$0")/merge_sort.sh"
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+merge_sort="${script_dir}/merge_sort.sh"
 
 chmod +x "$merge_sort"
 
