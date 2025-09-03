@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - 'Bash/**'
+      - '.github/workflows/bash.yml'
   pull_request:
     paths:
       - 'Bash/**'
+      - '.github/workflows/bash.yml'
   workflow_dispatch:
 
 jobs:
@@ -35,6 +37,17 @@ jobs:
               fi
               echo "\"${file}\""
             done
+            echo '],'
+            echo '"include": ['
+            f='false'
+            for file in ./Bash/**/*.test.sh; do
+              if "$f"; then
+                echo -n ','
+              else
+                f='true'
+              fi
+              echo "{ \"test\": \"${file}\", \"name\": \"$(basename ${file})\" }"
+            done
             echo ']'
             echo '}'
           }
@@ -46,7 +59,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.matrix.outputs.matrix) }}
-    name: run-${{ matrix.test }}
+    name: run-${{ matrix.name }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout
