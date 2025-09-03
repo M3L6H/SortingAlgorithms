@@ -21,6 +21,7 @@ jobs:
       - name: generate-matrix
         id: set-matrix
         run: |-
+          shopt -s globstar # Enable **
           shopt -s nullglob # Ignore empty glob
           make_matrix() {
             echo '{'
@@ -37,7 +38,6 @@ jobs:
             echo ']'
             echo '}'
           }
-          ls -lah
           matrix="$(make_matrix)"
           echo "$matrix" | jq .
           echo "matrix=$(echo "$matrix" | jq -c .)" >> "${GITHUB_OUTPUT}"
