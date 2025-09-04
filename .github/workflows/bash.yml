@@ -68,5 +68,20 @@ jobs:
           fetch-depth: 0
       - name: run-test
         run: |-
+          sudo tee /usr/bin/rev-cmp <<'EOF'
+          #!/usr/bin/env bash
+
+          a="$1" b="$2"
+
+          if [ "$a" -lt "$b" ]; then
+            echo -n '1'
+          elif [ "$a" -gt "$b" ]; then
+            echo -n '-1'
+          else
+            echo -n '0'
+          fi
+          EOF
+          sudo chmod +x /usr/bin/rev-cmp
+          which rev-cmp
           chmod +x '${{ matrix.test }}'
           . '${{ matrix.test }}'
