@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Expects:
 # 1: An element
 # Returns: A number represenring a 1-1 mapping to the given element
