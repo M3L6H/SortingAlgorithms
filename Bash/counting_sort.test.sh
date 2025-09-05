@@ -22,7 +22,7 @@ function eval_test {
     local name="$1"; shift
     local expected="$1"; shift
     local cmd="$1"; shift
-    local actual="$(cmd "$@")"
+    local actual="$("$cmd" "$@")"
     
     if [ "$?" -ne 0 ]; then
         failed=$((failed+1))
