@@ -53,7 +53,7 @@ function counting_sort {
   while [ "$len" -gt 0 ]; do
     local count="${counts[$key]}"
     local elt="${rev_map[$key]}"
-    while [ "$count" -gt 0 ]; do
+    while [ -n "$count" ] && [ "$count" -gt 0 ]; do
       output+=( "$elt" )
       count=$((count-1))
       len=$((len-1))
