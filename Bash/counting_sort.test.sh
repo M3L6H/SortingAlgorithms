@@ -22,9 +22,9 @@ function eval_test {
     local name="$1"; shift
     local expected="$1"; shift
     local cmd="$1"; shift
-    local actual="$("$cmd" "$@")"
-    
-    if [ "$?" -ne 0 ]; then
+    actual="$("$cmd" "$@")"
+    exit_status=$?
+    if [ "$exit_status" -ne 0 ]; then
         failed=$((failed+1))
         echo 'error'
         return
@@ -36,7 +36,7 @@ function eval_test {
         echo 'passed'
     else
         failed=$((failed+1))
-        echo 'failed'
+        echo "failed. Expected: '${expected}'. Actual: '${actual}'"
     fi
 }
 
