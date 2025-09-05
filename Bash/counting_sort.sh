@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Expects:
-# 1: A single character
-# Returns: The bucket that character belongs in
+# 1: An element
+# Returns: A number represenring a 1-1 mapping to the given element
 function map {
   echo "$1"
 }
@@ -22,25 +22,27 @@ function counting_sort {
   local map="$1"
   [ -z "$map" ] && map='map'
 
-  declare -A counts
   local min="$(map "${arr[0]}")"
 
-  declare -A rev_map
+  local counts=()
+  local rev_map=()
 
   for elt in "${arr[@]}"; do
     local key="$(map "$elt")"
     
-    if [ -n "${rev_map[$key]}" ] && [ "${rev_map[$key]}" != "$elt" ]; then
-      echo "Duplicate mapping '${elt}' & '${rev_map[$key]}' map to same key: '${key}'"
-      exit 1
-    else
-      rev_map[$key]="$elt"
+    if [ -n "${rev_map[$key]}" ]; then
+      if [ "${rev_map[$key]}" != "$elt" ]; then
+        echo "Duplicate mapping '${elt}' & '${rev_map[$key]}' map to same key: '${key}'"
+        exit 1
+      else
+        rev_map[$key]="$elt"
+      fi
     fi
     
     [ "$min" -gt "$key" ] && min="$key"
     local count="${counts[$key]}"
     [ -z "$count" ] && count=0
-    count=$((counts + 1))
+    count=$((count+1))
     counts[$key]="$count"
   done
 
@@ -53,9 +55,10 @@ function counting_sort {
     local elt="${rev_map[$key]}"
     while [ "$count" -gt 0 ]; do
       output+=( "$elt" )
-      count=$((count - 1))
+      count=$((count-1))
+      len=$((len-1))
     done
-    key=$((key + 1))
+    key=$((key+1))
   done
 
   echo "${output[@]}"
