@@ -22,13 +22,14 @@ function counting_sort {
   local map="$1"
   [ -z "$map" ] && map='map'
 
-  local min="$(map "${arr[0]}")"
+  local min="$("$map" "${arr[0]}")"
 
   local counts=()
   local rev_map=()
 
   for elt in "${arr[@]}"; do
-    local key="$(map "$elt")"
+    local key="$("$map" "$elt")"
+    1>&2 echo "Key: ${key}"
     
     if [ -n "${rev_map[$key]}" ]; then
       if [ "${rev_map[$key]}" != "$elt" ]; then
