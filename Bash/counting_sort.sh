@@ -24,20 +24,20 @@ function counting_sort {
 
   local min="$("$map" "${arr[0]}")"
 
-  local counts=()
-  local rev_map=()
+  # Support negative keys with associative arrays
+  declare -A counts
+  declare -A rev_map
 
   for elt in "${arr[@]}"; do
     local key="$("$map" "$elt")"
-    1>&2 echo "Key: ${key}"
     
     if [ -n "${rev_map[$key]}" ]; then
       if [ "${rev_map[$key]}" != "$elt" ]; then
         echo "Duplicate mapping '${elt}' & '${rev_map[$key]}' map to same key: '${key}'"
         exit 1
-      else
-        rev_map[$key]="$elt"
       fi
+    else
+      rev_map[$key]="$elt"
     fi
     
     [ "$min" -gt "$key" ] && min="$key"
