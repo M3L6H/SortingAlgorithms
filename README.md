@@ -9,6 +9,7 @@ Currently implemented are:
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/bubble_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/bubble_sort.rb)
 - Counting Sort
+  - [Bash](https://github.com/M3L6H/SortingAlgorithms/blob/master/Bash/counting_sort.sh)
   - [C++](https://github.com/M3L6H/SortingAlgorithms/blob/master/Cpp/counting_sort.cpp)
   - [Ruby](https://github.com/M3L6H/SortingAlgorithms/blob/master/Ruby/counting_sort.rb)
 - Insertion Sort
