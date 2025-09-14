@@ -45,6 +45,7 @@ eval_test 'single' '5' $c_sort 1 5
 eval_test 'double' '2 7' $c_sort 2 7 2
 eval_test 'same' '8 8 8' $c_sort 3 8 8 8
 eval_test 'big case' '-7 -4 -4 3 4 5 8 12 12 12' $c_sort 10 12 12 -4 -7 -4 3 8 12 4 5
+eval_test 'custom' 'a c c e j' $c_sort 5 a j c c e my_map
 
 echo "Passed: ${passed}"
 echo "Failed: ${failed}"
