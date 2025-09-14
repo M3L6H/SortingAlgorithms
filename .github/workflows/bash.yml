@@ -83,5 +83,23 @@ jobs:
           EOF
           sudo chmod +x /usr/bin/rev-cmp
           which rev-cmp
+
+          sudo tee /usr/bin/my-map <<'EOF'
+          #!/usr/bin/env bash
+          case "$1" in
+            'a') echo '1' ;;
+            'b') echo '2' ;;
+            'c') echo '3' ;;
+            'd') echo '4' ;;
+            'e') echo '5' ;;
+            'f') echo '6' ;;
+            'g') echo '7' ;;
+            'h') echo '8' ;;
+            'i') echo '9' ;;
+            'j') echo '10' ;;
+          esac
+          EOF
+          sudo chmod +x /usr/bin/my-map
+          which my-map
           chmod +x '${{ matrix.test }}'
           . '${{ matrix.test }}'
