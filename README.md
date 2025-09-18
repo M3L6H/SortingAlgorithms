@@ -16,6 +16,7 @@ different languages.
 Currently implemented are:
 
 - Bubble Sort
+  - [Bash](https://github.com/M3L6H/sorting-algorithms/blob/master/bash/bubble_sort.sh)
   - [C++](https://github.com/M3L6H/sorting-algorithms/blob/master/cpp/bubble_sort.cpp)
   - [Ruby](https://github.com/M3L6H/sorting-algorithms/blob/master/ruby/bubble_sort.rb)
 - Counting Sort
