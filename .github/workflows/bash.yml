@@ -3,11 +3,11 @@ name: test-bash
 on:
   push:
     paths:
-      - 'Bash/**'
+      - 'bash/**'
       - '.github/workflows/bash.yml'
   pull_request:
     paths:
-      - 'Bash/**'
+      - 'bash/**'
       - '.github/workflows/bash.yml'
   workflow_dispatch:
 
@@ -29,7 +29,7 @@ jobs:
             echo '{'
             echo '"test": ['
             f='false'
-            for file in ./Bash/**/*.test.sh; do
+            for file in ./bash/**/*.test.sh; do
               if "$f"; then
                 echo -n ','
               else
@@ -40,7 +40,7 @@ jobs:
             echo '],'
             echo '"include": ['
             f='false'
-            for file in ./Bash/**/*.test.sh; do
+            for file in ./bash/**/*.test.sh; do
               if "$f"; then
                 echo -n ','
               else
