@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Expects
 # 1: Item a
 # 2: Item b
@@ -33,7 +35,7 @@ function bubble_sort {
 
   while ! "$sorted"; do
     sorted='true'
-    for i in "${#arr[@]}"; do
+    for i in "${!arr[@]}"; do
       prev="$next"
       next="${arr[i]}"
       [ -z "$prev" ] && continue
