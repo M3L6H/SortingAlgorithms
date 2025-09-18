@@ -45,7 +45,7 @@ eval_test 'single' '5' $b_sort 1 5
 eval_test 'double' '2 7' $b_sort 2 7 2
 eval_test 'same' '8 8 8' $b_sort 3 8 8 8
 eval_test 'big case' '-7 -4 -4 3 4 5 8 12 12 12' $b_sort 10 12 12 -4 -7 -4 3 8 12 4 5
-eval_test 'custom' '8 8 6 3 1 1' $b_sort 6 1 6 1 8 3 8 my-comp
+eval_test 'custom' '8 8 6 3 1 1' $b_sort 6 1 6 1 8 3 8 rev-cmp
 
 echo "Passed: ${passed}"
 echo "Failed: ${failed}"
