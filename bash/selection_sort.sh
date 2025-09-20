@@ -34,11 +34,11 @@ function selection_sort {
   [ "$len" -le 1 ] && echo "${arr[@]}" && return 0
   [ -z "$comp" ] && comp='comp'
 
-  for i in "${!arr[@]}"; do
+  for i in ${!arr[@]}; do
     local min_idx="$i"
     local min_item="${arr[i]}"
 
-    for j in "$(seq "$((i + 1))" "$((len-1))")"; do
+    for j in $(seq "$((i + 1))" "$((len-1))"); do
       if [ "$("$comp" "$min_item" "${arr[j]}")" -gt 0 ]; then
         min_idx="$j"
         min_item="${arr[j]}"
