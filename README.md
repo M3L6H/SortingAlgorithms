@@ -37,5 +37,6 @@ Currently implemented are:
   - [C++](https://github.com/M3L6H/sorting-algorithms/blob/master/cpp/radix_sort.cpp)
   - [Ruby](https://github.com/M3L6H/sorting-algorithms/blob/master/ruby/radix_sort.rb)
 - Selection Sort
+  - [Bash](https://github.com/M3L6H/sorting-algorithms/blob/master/bash/selection_sort.sh)
   - [C++](https://github.com/M3L6H/sorting-algorithms/blob/master/cpp/selection_sort.cpp)
   - [Ruby](https://github.com/M3L6H/sorting-algorithms/blob/master/ruby/selection_sort.rb)
