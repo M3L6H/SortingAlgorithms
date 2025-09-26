@@ -34,7 +34,7 @@ function bsearch {
   if [ "$len" -eq 0 ]; then
     echo "$s"
     return 0
-  elif [ "$len" -lt 1 ]; then
+  elif [ "$len" -eq 1 ]; then
     if [ "$("$comp" "$item" "${arr[s]}")" -lt 0 ]; then
       echo "$s"
     else
