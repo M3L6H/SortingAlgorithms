@@ -29,7 +29,7 @@ function bsearch {
   local comp="$5"
   local len="$((e - s))"
   
-  echo "$item $arr $s $e $comp"
+  >&2 echo "$item $arr $s $e $comp"
 
   if [ "$len" -le 1 ]; then
     if [ "$("$comp" "$item" "${arr[s]}")" -lt 0 ]; then
