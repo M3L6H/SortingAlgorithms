@@ -46,9 +46,9 @@ function bsearch {
   local i="$((s + len / 2))"
 
   if [ "$("$comp" "$item" "${arr[i]}")" -lt 0 ]; then
-    bsearch "$item" "${arr[@]}" "$s" "$i" "$comp"
+    bsearch "$item" "${arr[*]}" "$s" "$i" "$comp"
   else
-    bsearch "$item" "${arr[@]}" "$((i+1))" "$e" "$comp"
+    bsearch "$item" "${arr[*]}" "$((i+1))" "$e" "$comp"
   fi
 }
 
@@ -74,7 +74,7 @@ function insertion_sort {
   local sorted=()
 
   for elt in ${arr[@]}; do
-    local idx="$(bsearch "$elt" "${sorted[@]}" 0 "${#sorted[@]}" "$comp")"
+    local idx="$(bsearch "$elt" "${sorted[*]}" 0 "${#sorted[@]}" "$comp")"
 
     local curr="${sorted[idx]}"
     sorted[idx]="$elt"
