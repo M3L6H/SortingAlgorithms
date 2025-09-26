@@ -28,6 +28,8 @@ function bsearch {
   local e="$4"
   local comp="$5"
   local len="$((e - s))"
+  
+  echo "$item $arr $s $e $comp"
 
   if [ "$len" -le 1 ]; then
     if [ "$("$comp" "$item" "${arr[s]}")" -lt 0 ]; then
@@ -60,7 +62,7 @@ function insertion_sort {
     len=$((len - 1))
     shift
   done
-  comp="$1"
+  local comp="$1"
 
   local len="${#arr[@]}"
   [ "$len" -le 1 ] && echo "${arr[@]}" && return 0
@@ -69,8 +71,7 @@ function insertion_sort {
   local sorted=()
 
   for elt in ${arr[@]}; do
-    local len="${#sorted[@]}"
-    local idx="$(bsearch "$elt" "${sorted[@]}" 0 "$len" "$comp")"
+    local idx="$(bsearch "$elt" "${sorted[@]}" 0 "${#sorted[@]}" "$comp")"
 
     local curr="${sorted[idx]}"
     sorted[idx]="$elt"
