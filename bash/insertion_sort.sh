@@ -28,8 +28,6 @@ function bsearch {
   local e="$4"
   local comp="$5"
   local len="$((e - s))"
-  
-  >&2 echo "'$item' '${arr[*]}' '$s' '$e' '$comp'"
 
   if [ "$len" -eq 0 ]; then
     echo "$s"
