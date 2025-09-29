@@ -80,7 +80,7 @@ function insertion_sort {
     local curr="${sorted[idx]}"
     sorted[idx]="$elt"
 
-    for ((i=$idx+1;i<$s_len;i++)); do
+    for ((i=$idx+1;i<$s_len+1;i++)); do
       local tmp="${sorted[i]}"
       sorted[i]="$curr"
       curr="$tmp"
