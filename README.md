@@ -24,6 +24,7 @@ Currently implemented are:
   - [C++](https://github.com/M3L6H/sorting-algorithms/blob/master/cpp/counting_sort.cpp)
   - [Ruby](https://github.com/M3L6H/sorting-algorithms/blob/master/ruby/counting_sort.rb)
 - Insertion Sort
+  - [Bash](https://github.com/M3L6H/sorting-algorithms/blob/master/bash/insertion_sort.sh)
   - [C++](https://github.com/M3L6H/sorting-algorithms/blob/master/cpp/insertion_sort.cpp)
   - [Ruby](https://github.com/M3L6H/sorting-algorithms/blob/master/ruby/insertion_sort.rb)
 - Merge Sort
